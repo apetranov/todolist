@@ -68,7 +68,7 @@ function App() {
       <Header />
       <div onSubmit={(e) => addTask(e)} className="p-10">
         <form className="flex justify-center items-center">
-          <div className="shadow-lg p-5 space-x-3">
+          <div className="shadow-lg space-y-3 md:space-y-0 flex-col md:flex-row p-5 space-x-3 flex justify-center items-center">
             <input
               value={task}
               onChange={(e) => setTask(e.target.value)}
@@ -89,7 +89,7 @@ function App() {
           {tasks.map((task) =>
             !task.completed ? (
               <div
-                className="p-3 flex m-3 flex-row justify-center items-center space-x-5 shadow-lg"
+                className="p-3 flex m-3 flex-col space-y-5 md:space-y-0 md:flex-row justify-center items-center md:space-x-5 shadow-lg"
                 key={task.id}
               >
                 <p>{task.description}</p>
@@ -113,7 +113,7 @@ function App() {
           {tasks.map((task) =>
             task.completed ? (
               <div
-                className="p-3 flex m-3 bg-green-400 flex-row justify-center items-center space-x-5 shadow-lg"
+                className="p-3 flex bg-green-400 m-3 flex-col space-y-5 md:space-y-0 md:flex-row justify-center items-center md:space-x-5 shadow-lg"
                 key={task.id}
               >
                 <p>{task.description}</p>
